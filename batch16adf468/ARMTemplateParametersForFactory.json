@@ -1,0 +1,66 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "batch16adf468"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"BATCH16STORAGE1_accountKey": {
+			"value": ""
+		},
+		"incremental copy 1_accountKey": {
+			"value": ""
+		},
+		"incrementaldata_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://batch16strgen2.dfs.core.windows.net/"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "MANOHAR MITTAPALLY's Cluster"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "batch16sqlserver256.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "batch16sqldb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "manu4681"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "batch16sqlserver256.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "batch16sqldb"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "manu4681"
+		},
+		"BATCH16STORAGE1_properties_typeProperties_url": {
+			"value": "https://batch16strgen2.dfs.core.windows.net/"
+		},
+		"incremental copy 1_properties_typeProperties_url": {
+			"value": "https://batch16strgen2.dfs.core.windows.net/"
+		},
+		"incrementaldata_properties_typeProperties_url": {
+			"value": "https://batch16strgen2.dfs.core.windows.net/"
+		},
+		"STOREAGEEVENT_properties_typeProperties_scope": {
+			"value": "/subscriptions/08c17d1e-7b0b-40b4-9b43-7463f38d65bf/resourceGroups/Batch16rsg/providers/Microsoft.Storage/storageAccounts/batch16strgen2"
+		}
+	}
+}
