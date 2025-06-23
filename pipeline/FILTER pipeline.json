@@ -1,0 +1,102 @@
+{
+	"name": "FILTER pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Filter1",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('m1')",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@greater(item(),2)",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('m1')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Wait1",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 1
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "ForEach2",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Filter1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Filter1').output.VALUE",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Wait2",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 1
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"m1": {
+				"type": "Array",
+				"defaultValue": [
+					1,
+					2,
+					3,
+					4,
+					5
+				]
+			},
+			"m2": {
+				"type": "String",
+				"defaultValue": "manu"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-06-18T12:15:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

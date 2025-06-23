@@ -1,0 +1,24 @@
+{
+	"name": "STOREAGEEVENT",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Storeagepipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/batch16gencon/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/08c17d1e-7b0b-40b4-9b43-7463f38d65bf/resourceGroups/Batch16rsg/providers/Microsoft.Storage/storageAccounts/batch16strgen2",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

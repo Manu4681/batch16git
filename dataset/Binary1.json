@@ -1,0 +1,20 @@
+{
+	"name": "Binary1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BATCH16STORAGE1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "UFCDATASET",
+				"folderPath": "folderA",
+				"fileSystem": "batch16gencon"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

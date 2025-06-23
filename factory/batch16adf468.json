@@ -1,0 +1,17 @@
+{
+	"name": "batch16adf468",
+	"properties": {
+		"globalParameters": {
+			"global": {
+				"type": "int",
+				"value": 10
+			}
+		}
+	},
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fe11dd73-df30-40d4-8085-008acb4f35c6",
+		"tenantId": "84abaf12-2c92-4ca1-b386-a23806131e4f"
+	}
+}

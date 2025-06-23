@@ -1,0 +1,89 @@
+{
+	"name": "DelimitedText2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BATCH16STORAGE1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "student_habits_performance.csv",
+				"fileSystem": "batch16gencon"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "student_id",
+				"type": "String"
+			},
+			{
+				"name": "age",
+				"type": "String"
+			},
+			{
+				"name": "gender",
+				"type": "String"
+			},
+			{
+				"name": "study_hours_per_day",
+				"type": "String"
+			},
+			{
+				"name": "social_media_hours",
+				"type": "String"
+			},
+			{
+				"name": "netflix_hours",
+				"type": "String"
+			},
+			{
+				"name": "part_time_job",
+				"type": "String"
+			},
+			{
+				"name": "attendance_percentage",
+				"type": "String"
+			},
+			{
+				"name": "sleep_hours",
+				"type": "String"
+			},
+			{
+				"name": "diet_quality",
+				"type": "String"
+			},
+			{
+				"name": "exercise_frequency",
+				"type": "String"
+			},
+			{
+				"name": "parental_education_level",
+				"type": "String"
+			},
+			{
+				"name": "internet_quality",
+				"type": "String"
+			},
+			{
+				"name": "mental_health_rating",
+				"type": "String"
+			},
+			{
+				"name": "extracurricular_participation",
+				"type": "String"
+			},
+			{
+				"name": "exam_score",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

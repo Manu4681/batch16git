@@ -1,0 +1,41 @@
+{
+	"name": "dbSql2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "saleid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "productname",
+				"type": "varchar"
+			},
+			{
+				"name": "category",
+				"type": "varchar"
+			},
+			{
+				"name": "saleamount",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 2
+			},
+			{
+				"name": "saledate",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "sales6"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,97 @@
+{
+	"name": "storeprocedure pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[stored]",
+					"storedProcedureParameters": {
+						"sale_id": {
+							"value": "5",
+							"type": "Int64"
+						},
+						"product_name": {
+							"value": "iphone",
+							"type": "String"
+						},
+						"category": {
+							"value": "mobile",
+							"type": "String"
+						},
+						"quantity": {
+							"value": "2",
+							"type": "Int16"
+						},
+						"price": {
+							"value": "150",
+							"type": "Decimal"
+						},
+						"sale_date": {
+							"value": "2024-12-16",
+							"type": "Datetime"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Lookup1",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "Stored procedure1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "@activity('Stored procedure1').output",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			}
+		],
+		"concurrency": 1,
+		"variables": {
+			"stored": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-06-19T11:34:51Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
